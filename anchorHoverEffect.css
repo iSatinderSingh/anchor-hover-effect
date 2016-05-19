@@ -1,0 +1,211 @@
+
+/*!
+*  anchor hover effect plugin ( Make your anchor tag fancy and animated)
+* Original author: Satinder Singh 
+* Blog: http://codepedia.info
+* Demo: 
+* Further changes, comments: 
+* Licensed under the MIT license
+*/
+
+
+
+/* Roller 3d effect  */
+.roller3d {
+    color: #fd6584;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    perspective: 300px;
+    perspective-origin: 50% 50%;
+    vertical-align: top;
+}
+.roller3d:hover {
+    background: none;
+    text-shadow: none;
+    color: #fd6584;
+}
+.roller3d span {
+    display: block;
+    position: relative;
+    padding: 2px 2px;
+    pointer-events: none;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    transition: all 400ms ease;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.roller3d:hover span {
+    /*  background: rgba(190,190,20,.9); */
+    
+    -webkit-transform: translate3d( 0px, 0px, -55px) rotateX( 90deg);
+    -moz-transform: translate3d( 0px, 0px, -55px) rotateX( 90deg);
+    -ms-transform: translate3d( 0px, 0px, -55px) rotateX( 90deg);
+    transform: translate3d( 0px, 0px, -55px) rotateX( 90deg);
+}
+.roller3d span:after {
+    content: attr(data-txt);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 2px 2px;
+    white-space: nowrap;
+    color: white;
+    /*    background: #a533fd;  */
+    
+    background: #fd6584;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
+    -moz-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
+    -ms-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
+    transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
+}
+/*  Bracket effects    */
+
+.brackets a {
+    color: #fd6584;
+}
+.brackets a::before,
+.brackets a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.brackets a::before {
+    margin-right: 10px;
+    content: '[';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+.brackets a::after {
+    margin-left: 10px;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+.brackets a:hover::before,
+.brackets a:hover::after,
+.brackets a:focus::before,
+.brackets a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+    color: #fd6584;
+}
+/* Flip effect   */
+
+.flip {
+    height: 1em;
+    padding: 0 4px;
+    position: relative;
+}
+.flip a {
+    overflow: hidden;
+    padding: 2px 4px;
+    /*  height: 1em;*/
+    
+    position: relative;
+    display: inline-block;
+    color: #fd6584;
+}
+.flip a span {
+    padding: 2px 4px;
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+.flip a span::before {
+    position: absolute;
+    top: 100%;
+    content: attr(data-txt);
+    font-weight: 700;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.flip a:hover span,
+.flip a:focus span {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+    color: #fd6584;
+}
+/* Boderbottom   */
+
+.borderBottomEffect a {
+    padding: 8px 0;
+    color: #fd6584;
+}
+.borderBottomEffect a::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /*background: rgba(0,0,0,0.1); */
+    
+    background: #fd6584;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
+}
+.borderBottomEffect a:hover::after,
+.borderBottomEffect a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+.ulDefault a {
+    display: inline-block;
+    letter-spacing: 1px;
+    margin: 15px 25px;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    font-weight: bold;
+   
+}
+
+  .ulDefault {
+    float: left;
+    margin: 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.ulDefault li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    width: 215px;
+}
