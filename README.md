@@ -35,3 +35,5 @@ Currently, there are four different types of effect.
 * **brackets :** It added left right rectangle brackets at start and end of anchor text with animation.
 * **flip :** It flips the anchor text.
 * **borderBottom :** It adds border bottom with animation.
+
+## License: MIT
