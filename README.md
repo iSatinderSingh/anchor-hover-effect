@@ -1,6 +1,7 @@
 # anchor-hover-effect
 Anchor Hover Effect is a jQuery plugin, which makes an anchor tag fancy and animated. Currently, it provides four different types of effects .i.e Roller 3D effect, Flip Effect, Bracket Effect, and BorderBottom effect. 
-For Doc: http://codepedia.info/anchor-hover-effect-jquery-plugin/
+
+Doc: http://codepedia.info/anchor-hover-effect-jquery-plugin/
 
 ## DEMO
 Look at the demo section on http://codepedia.info/Anchor-hover-effect-jquery-plugin.html to see anchorHoverEffect in action.
